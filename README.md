@@ -12,4 +12,22 @@ Then run a container to test that I got a working environment. Checking rust fir
 
 `podman run --rm rust:alpine3.17 rustc --version`  
 
-`podman run --rm rust:alpine3.17 cargo --version`
+`podman run --rm rust:alpine3.17 cargo --version`  
+
+### Build projects in containers  
+
+Creating a docker file since podman can handle them as well. 
+
+```
+cd src/helloworld
+podman build -t helloworld -f Dockerfile
+# finally call the newly compiled file
+podman run --rm helloworld ./main 
+```
+
+After the initial set up, I am mounting the volume to my src directory and running the rust code in the container interactively.
+
+`podman run  -ti -v $HOME/rust_intro/src:/home  rust:alpine3.17 sh`  
+
+
+
