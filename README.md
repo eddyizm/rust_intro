@@ -27,7 +27,15 @@ podman run --rm helloworld ./main
 
 After the initial set up, I am mounting the volume to my src directory and running the rust code in the container interactively.
 
-`podman run  -ti -v $HOME/rust_intro/src:/home  rust:alpine3.17 sh`  
+`podman run -ti -v $HOME/rust_intro/app:/home  rust:alpine3.17 sh`  
+
+Use cargo to create new project
+
+```
+cargo new hello-cargo
+cd hello-cargo
+cargo run
+```
 
 
 
