@@ -1,4 +1,4 @@
-fn main(){
+pub fn main(){
     let mut counter = 1;
     // stop_loop is set when loop stops
     let stop_loop = loop {

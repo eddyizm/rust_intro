@@ -1,6 +1,9 @@
+mod break_sample;
+
 use std::fs::File;
 use std::io::{Error, Read};
 use std::path::PathBuf;
+
 
 fn read_file_contents(path: PathBuf) -> Result<String, Error> {
     let mut string = String::new();
@@ -35,5 +38,6 @@ fn main() {
     }
     if read_file_contents(PathBuf::from("non-existent-file.txt")).is_err() {
         println!("The program reported an error for the file that doesn't exist.");
+        break_sample::main();
     }
 }
